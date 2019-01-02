@@ -1,0 +1,15 @@
+{
+  "name": "TwoHandedTetris",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "nvm": "0.0.4",
+    "react-native": "0.57.5",
+    "react-native-navbar": "^2.1.0",
+    "react-navigation": "^3.0.9",
+    "styled-components": "^4.1.3"
+  }
+}

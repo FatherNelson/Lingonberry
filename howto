@@ -1,0 +1,8 @@
+I started by following these instructions:
+    https://medium.com/@ladyleet/building-your-first-react-native-app-4f21ced91064
+Once done with this tutorial, I installed 'react-native-elements'
+
+It should be noted that of the errors shown, when downloading a new library more often than not you must run this:
+    rm -rf /tmp/haste-map-react-native-packager-*
+If this does not work, run this:
+     npm start -- --reset-cache

@@ -1,18 +1,20 @@
 import {createAppContainer, createStackNavigator} from "react-navigation";
-import HomeScreen from "./HomeScreen";
+import HomeScreen from "./Pages/HomeScreen/HomeScreen";
 import Avatar from "./AvatarComponent";
 import Games from "./Games";
 import React from "react";
 import {Button, Icon} from "react-native-elements";
 import Profile from "./Profile";
-import SignupScreen from "./SignupScreen"
+import SignupScreen from "./SignupScreen";
+import ActiveGame from "./Pages/ActiveGame/ActiveGame";
 
 const AppNav = createStackNavigator(
     {
       Home: {screen: HomeScreen},
       Games: {screen: Games},
       Profile: {screen: Profile},
-      Signup: {screen: SignupScreen}
+      Signup: {screen: SignupScreen},
+      ActiveGame: {screen: ActiveGame}
     },
     {
       initialRouteName: "Home",
@@ -31,13 +33,13 @@ const AppNav = createStackNavigator(
                         backgroundColor: 'transparent'
                       }
                     }
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => alert("Configure navigationOptions")}
                     title={null}
             />
         ),
         headerLeft: (
             <Button icon = {<Avatar/>}
-                    onPress = {()=> alert("You clicked my button!")}
+                    onPress = {()=> alert("Configure navigationOptions")}
                     buttonStyle={
                       {
                         backgroundColor: 'transparent'
@@ -55,7 +57,7 @@ const AppNav = createStackNavigator(
                         color='black'
                         clear="true"
                         name='view-headline'/>}
-                onPress={() => navigation.navigate("Games")
+                onPress={() => alert("Configure navigationOptions")
                 }
                 buttonStyle={
                   {backgroundColor: 'transparent'}
