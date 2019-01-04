@@ -5,14 +5,27 @@ import {StyleSheet} from "react-native";
 export default class Row extends React.Component{
   constructor(){
     super();
-    this.props={
-      row : []
+    this.state={
+      loading: true,
+      squareColor: "white"
     };
+    this.props={
+      row : [],
+    };
+  }
+  componentDidMount(){
+    this.setState({loading: false});
+    this.setState({squareColor: this.props.squareColor})
+  }
+  componentDidUpdate(prevState){
+    if(this.props.squareColor !== prevState.squareColor){
+      this.setState({squareColor: this.props.squareColor})
+    }
   }
   render(){
     return(
         this.props.row.map((r,i)=>(
-            <Square style = {stylesGrid.boxContainer} row = {i}/>
+            <Square squareColor = {this.state.squareColor} style = {stylesGrid.boxContainer} row = {i}/>
         ))
     )
   }

@@ -12,13 +12,18 @@ export default class GenerateBox extends React.Component{
     super();
   }
   static getBox(){
-    roll.height = Math.floor(Math.random() * 6) + 1;
-    roll.width = Math.floor(Math.random() * 6) + 1;
+    roll.rows = Math.floor(Math.random() * 6) + 1;
+    roll.cols = Math.floor(Math.random() * 6) + 1;
     return roll;
   }
   render(){
     return(
-      <Board rows = {roll.width} cols = {roll.height}/>
+        <View></View>
     )
   }
+  // render(){
+  //   return(
+  //     <Board rows = {roll.width} cols = {roll.height}/>
+  //   )
+  // }
 }

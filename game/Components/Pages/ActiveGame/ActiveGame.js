@@ -6,6 +6,7 @@ import {Button, Icon} from "react-native-elements";
 import Avatar from "../../AvatarComponent";
 import GenerateBox from "../../GameEngine/GenerateBox";
 import GamePiece from "./GamePiece";
+import Draggable from "./Tutorials/Draggable";
 import userAvatar from "../../../img/avatars/grant.jpg";
 import opponentAvatar from "../../../img/avatars/santa.jpg";
 
@@ -78,9 +79,9 @@ export default class ActiveGame extends React.Component{
             <Text style = {styles.scoreLine}>Score: {this.state.userScore} - {this.state.opponentScore}</Text>
             <Image style = {styles.rightThumbnail} source = {opponentAvatar}/>
           </View>
-          <Board rows = {25} cols = {25}/>
+          <Board draggable = {false} zoomable = {true} rows = {25} cols = {25}/>
           <Text style = {styles.gamePiece}>The game piece is below me. Please style this section</Text>
-          <GamePiece/>
+          <GamePiece squareColor = {"blue"}/>
         </ScrollView>
     );
   }

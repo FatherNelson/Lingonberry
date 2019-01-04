@@ -8,29 +8,35 @@ let Coloring = {
   boxColor: "white"
 };
 export default class Square extends React.Component{
-  constructor(){
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      loading: true,
       boxColor: "black",
-      highlightColor: "white"
+      squareColor: "white"
     };
-    this.props = {
-      newRow: false
-    }
   }
-
   pickBoxColor(){
     if(this.props.id > 605 && this.props.id < 609 || this.props.id > 580 && this.props.id < 584){
       Coloring = {
-        backgroundColor: "red",
+        backgroundColor: this.state.squareColor,
         borderColor: "red"
       }
     }
     else{
       Coloring = {
-        backgroundColor: "white",
+        backgroundColor: this.state.squareColor,
         borderColor: "black"
       }
+    }
+  }
+  componentDidMount(){
+    this.setState({loading:false});
+    this.setState({squareColor: this.props.squareColor})
+  }
+  componentDidUpdate(prevProps){
+    if(this.props.squareColor !== prevProps.squareColor){
+      this.setState({squareColor: this.props.squareColor})
     }
   }
   render(){
