@@ -13,22 +13,16 @@ export default class Square extends React.Component{
     this.state = {
       loading: true,
       boxColor: "black",
-      squareColor: "white"
+      squareColor: "white",
+      board: true,
+      gamePiece: false
     };
   }
   pickBoxColor(){
-    if(this.props.id > 605 && this.props.id < 609 || this.props.id > 580 && this.props.id < 584){
-      Coloring = {
-        backgroundColor: this.state.squareColor,
-        borderColor: "red"
-      }
-    }
-    else{
       Coloring = {
         backgroundColor: this.state.squareColor,
         borderColor: "black"
       }
-    }
   }
   componentDidMount(){
     this.setState({loading:false});

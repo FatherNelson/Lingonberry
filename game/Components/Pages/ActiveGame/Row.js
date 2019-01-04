@@ -15,7 +15,8 @@ export default class Row extends React.Component{
   }
   componentDidMount(){
     this.setState({loading: false});
-    this.setState({squareColor: this.props.squareColor})
+    this.setState({squareColor: this.props.squareColor});
+    this.setState({gamePiece: this.props.gamePiece});
   }
   componentDidUpdate(prevProps){
     if(this.props.squareColor !== prevProps.squareColor){
@@ -25,7 +26,12 @@ export default class Row extends React.Component{
   render(){
     return(
         this.props.row.map((r,i)=>(
-            <Square squareColor = {this.state.squareColor} style = {stylesGrid.boxContainer} row = {i}/>
+            <Square gamePiece = {this.props.gamePiece}
+                    squareColor = {this.state.squareColor}
+                    style = {stylesGrid.boxContainer}
+                    row = {i}
+                    id = {((this.props.id)*25) + i}
+            />
         ))
     )
   }

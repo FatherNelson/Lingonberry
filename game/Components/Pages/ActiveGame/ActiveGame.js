@@ -9,7 +9,7 @@ import GamePiece from "./GamePiece";
 import Draggable from "./Tutorials/Draggable";
 import userAvatar from "../../../img/avatars/grant.jpg";
 import opponentAvatar from "../../../img/avatars/santa.jpg";
-
+import PinchZoomView from "react-native-pinch-zoom-view";
 //This file contains the screen displayed to the user when they open up a game to play it.
 
 export default class ActiveGame extends React.Component{
@@ -73,16 +73,16 @@ export default class ActiveGame extends React.Component{
   }
   render(){
     return(
-        <ScrollView>
-          <View style = {styles.scoreBoard}>
-            <Image style = {styles.leftThumbnail} source = {userAvatar}/>
-            <Text style = {styles.scoreLine}>Score: {this.state.userScore} - {this.state.opponentScore}</Text>
-            <Image style = {styles.rightThumbnail} source = {opponentAvatar}/>
-          </View>
-          <Board draggable = {false} zoomable = {true} rows = {25} cols = {25}/>
-          <Text style = {styles.gamePiece}>The game piece is below me. Please style this section</Text>
-          <GamePiece squareColor = {"blue"}/>
-        </ScrollView>
+          <ScrollView>
+            <View style = {styles.scoreBoard}>
+              <Image style = {styles.leftThumbnail} source = {userAvatar}/>
+              <Text style = {styles.scoreLine}>Score: {this.state.userScore} - {this.state.opponentScore}</Text>
+              <Image style = {styles.rightThumbnail} source = {opponentAvatar}/>
+            </View>
+            <Board draggable = {false} zoomable = {true} rows = {25} cols = {25}/>
+            <Text style = {styles.gamePiece}>The game piece is below me. Please style this section</Text>
+            <GamePiece squareColor = {"blue"}/>
+          </ScrollView>
     );
   }
 }

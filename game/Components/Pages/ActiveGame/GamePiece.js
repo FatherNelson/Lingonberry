@@ -4,7 +4,9 @@ import Square from "./Square";
 import Board from "./Board";
 import {Animated, PanResponder, View, Dimensions, StyleSheet} from "react-native";
 import Row from "./Row";
+
 let Window = Dimensions.get('window');
+let roll = GenerateBox.getBox();
 export default class GamePiece extends React.Component {
   constructor(){
     super();
@@ -44,7 +46,6 @@ export default class GamePiece extends React.Component {
   }
 
   render(){
-    const roll = GenerateBox.getBox();
     const row_array = Array(roll.rows).fill(0);
     const col_array = Array(roll.cols).fill(0);
     return(

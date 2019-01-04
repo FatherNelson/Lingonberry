@@ -16,11 +16,13 @@
     "react-native-elements": "^1.0.0-beta7",
     "react-native-fontawesome": "^6.0.1",
     "react-native-gesture-handler": "^1.0.12",
+    "react-native-image-pan-zoom": "^2.1.11",
     "react-native-pinch-zoom-view": "^0.2.0",
     "react-native-touchable-scale": "^2.0.0",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.9",
-    "react-navigation-header-buttons": "^2.1.1"
+    "react-navigation-header-buttons": "^2.1.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

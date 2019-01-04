@@ -23,6 +23,9 @@ export default class Board extends React.Component {
       this.setState({zoomable: true})
     }
   }
+  adjustBoardLocationOnResize(){
+    alert("I was called");
+  }
   render() {
     //TODO: Figure out which of these we need
     const rows = this.props.rows;
@@ -32,10 +35,10 @@ export default class Board extends React.Component {
     const board = Array(rows*cols).fill(0);
     if(this.props.zoomable) {
       return (
-          <PinchZoomView maxScale={1.5}>
+          <PinchZoomView allowPanScale = {1.25} maxScale={1.5}>
             {col_array.map((c, k) => (
-              <View style={stylesGrid.sectionContainer}>
-                <Row row={row_array}/>
+              <View onLayout = {()=>{this.adjustBoardLocationOnResize()}} style={stylesGrid.sectionContainer}>
+                <Row id = {k} row={row_array}/>
               </View>
               ))
             }
