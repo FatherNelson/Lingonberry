@@ -36,14 +36,7 @@ export default class Square extends React.Component{
   render(){
     this.pickBoxColor();
     return(
-        this.props.row !== 0 ?
-        <View style = {[styles.newRowContainer, Coloring]}>
-          <Text>{this.props.row}</Text>
-        </View>
-        :
-        <View style = {[styles.newRowContainer, Coloring]}>
-          <Text>{this.props.row}</Text>
-        </View>
+        <View style = {[styles.container, Coloring]}/>
     )
   }
 }
@@ -52,23 +45,11 @@ export default class Square extends React.Component{
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    height: 15,
-    width: 15,
-    borderWidth:1,
-    borderColor: "black",
-    flexWrap: "nowrap",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  newRowContainer:{
-    backgroundColor: "white",
-    height: 15,
-    width: 15,
+    height: 12,
+    width: 12,
     borderWidth:1,
     borderColor: "black",
     flexWrap: "wrap",
-    flexBasis: 15,
     justifyContent: "center",
     alignItems: "center"
   }
