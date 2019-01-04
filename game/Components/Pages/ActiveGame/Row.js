@@ -17,8 +17,8 @@ export default class Row extends React.Component{
     this.setState({loading: false});
     this.setState({squareColor: this.props.squareColor})
   }
-  componentDidUpdate(prevState){
-    if(this.props.squareColor !== prevState.squareColor){
+  componentDidUpdate(prevProps){
+    if(this.props.squareColor !== prevProps.squareColor){
       this.setState({squareColor: this.props.squareColor})
     }
   }
