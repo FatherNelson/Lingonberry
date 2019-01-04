@@ -1,12 +1,12 @@
 import {createAppContainer, createStackNavigator} from "react-navigation";
-import HomeScreen from "./Pages/HomeScreen/HomeScreen";
-import Avatar from "./AvatarComponent";
-import Games from "./Games";
+import HomeScreen from "../Pages/HomeScreen/HomeScreen";
+import Avatar from "../AvatarComponent";
+import Games from "../Games";
 import React from "react";
 import {Button, Icon} from "react-native-elements";
-import Profile from "./Profile";
-import SignupScreen from "./SignupScreen";
-import ActiveGame from "./Pages/ActiveGame/ActiveGame";
+import Profile from "../Pages/Profile/Profile";
+import SignupScreen from "../Pages/SignupScreen/SignupScreen";
+import ActiveGame from "../Pages/ActiveGame/ActiveGame";
 
 const AppNav = createStackNavigator(
     {
@@ -17,7 +17,7 @@ const AppNav = createStackNavigator(
       ActiveGame: {screen: ActiveGame}
     },
     {
-      initialRouteName: "Home",
+      initialRouteName: "ActiveGame",
       defaultNavigationOptions: {
         headerStyle: {
           backgroundColor: '#f4511e',

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, View} from 'react-native'
 import {Avatar, Button, Divider, Icon, ListItem} from 'react-native-elements';
-import AvatarComponent from "./AvatarComponent";
+import AvatarComponent from "../../AvatarComponent";
 
 export default class Profile extends React.Component{
   static navigationOptions = ({navigation}) =>

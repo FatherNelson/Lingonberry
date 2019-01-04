@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native'
 import {Button, Icon} from "react-native-elements";
-import AvatarComponent from "./AvatarComponent";
+import AvatarComponent from "../../AvatarComponent";
 
 export default class SignupScreen extends React.Component{
   static navigationOptions = ({navigation}) =>

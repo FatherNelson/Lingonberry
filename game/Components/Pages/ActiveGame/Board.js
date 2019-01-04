@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import Square from "./Square";
-const rows = 25;
-const cols = 25;
+import Row from "./Row"
+// let rows = 25;
+// let cols = 25;
 const marginHorizontal = 1;
 const marginVertical = 1;
 const width = 10;
@@ -12,14 +13,17 @@ let board = Array(25*25).fill(0);
 export default class Board extends React.Component {
 
   render() {
+    const rows = this.props.rows;
+    const cols = this.props.cols;
+    const row_array = Array(this.props.rows).fill(0);
+    const col_array = Array(this.props.cols).fill(0);
+    const board = Array(rows*cols).fill(0);
     return (
+      col_array.map((c,k)=>(
         <View style={stylesGrid.sectionContainer}>
-          {
-            board.map((b,i)=>(
-                <Square style = {stylesGrid.boxContainer} id = {i}/>
-            ))
-          }
+          <Row row = {row_array}/>
         </View>
+      ))
     );
   }
 }
